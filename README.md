@@ -44,5 +44,5 @@ Currently the wrapper can be used just for:
 1. Download all files from a study (SRP accession id)
 2. Download a subset of samples from one study
 
-In both cases a table with the respective metadata is generated.
-For access all the pysradb function, the user should execute the pysradb docker image changing the --entrypoint to bash, so the program can be used inside the container.
+In both cases, a table with the respective metadata is generated.
+To access all the *__pysradb__* functions, the user should execute the pysradb docker image changing the --entrypoint to bash, so the program can be used interactively inside the container.
