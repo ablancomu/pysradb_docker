@@ -10,8 +10,8 @@ This is a wrapper in Docker of the python package *__pysradb__* :
 # Install
 
 ```
-git clone [agregar repo publico del wrapper]
-cd [repo_folder]
+git clone https://github.com/ablancomu/pysradb_docker.git
+cd pysradb_docker
 docker build -t pysradb .
 ```
 
@@ -22,21 +22,21 @@ Let's take the __SRP256479__ study as example:
 ### Case 1: Download all the files from SRP256479
 
 ```
-docker run --rm -it -v /path/to/repo/folder:/home/docker/out -e SRP='SRP256479' -e THREADS='8' pysradb
+docker run --rm -it -v /path/to/repo/pysradb_docker:/home/docker/out -e SRP='SRP256479' -e THREADS='8' pysradb
 ```
 The __THREADS__ is an env variable to select the number of cores to download the study samples. If is not provided, the default is set to 4 cores.
 
 ### Case 2: Download a subset of samples from one study
 
 ```
-docker run --rm -it -v /path/to/repo/folder:/home/docker/out -e SRP='SRP256479' -e INPUT='subset.txt' -e THREADS='8' pysradb
+docker run --rm -it -v /path/to/repo/pysradb_docker:/home/docker/out -e SRP='SRP256479' -e INPUT='subset.txt' -e THREADS='8' pysradb
 ```
 
-The _subset.txt_ file should be plain text with one SRS/SRR code per line, whithout header.
+The _subset.txt_ file should be plain text with one SRS/SRR code per line, whithout header. The github repository comes with an example file `sra_sampleID.txt` 
 
 # Outputs
 
-The wrapper creates in the `/path/to/repo/folder` a folder called `pysradb_downloads` with all the SRA files of the samples. It also saves a table with the metadata of the downloaded samples.
+The wrapper creates in the `/path/to/repo/pysradb_docker` a folder called `pysradb_downloads` with all the SRA files of the samples. It also saves a table with the metadata of the downloaded samples.
 
 # Limitations
 
