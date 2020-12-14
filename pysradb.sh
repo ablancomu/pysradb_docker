@@ -15,7 +15,7 @@ elif [ "${INPUT}" != "NULL" ] && [ "${SRP}" != "NULL" ]; then
         exit
     fi
     pysradb metadata ${SRP} --detailed | grep -f tmp > ${SRP}_subset.metadata
-    cat ${SRP_subset}.metadata | pysradb download -y -t ${THREADS}
+    cat ${SRP}_subset.metadata | pysradb download -y -t ${THREADS}
 else
     echo "ERROR: check the input file or study accesion ID (SRP)"
 fi 
